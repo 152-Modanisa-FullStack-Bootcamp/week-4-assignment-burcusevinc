@@ -4,19 +4,18 @@ import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
+
+//router sırayla çalışır, hiçbiriyle matchleşmeşse home'a gider.
 const routes = [
   {
-    path: '/',
+    path: '/home',
     name: 'Home',
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '*',
+    name: 'Home',
+    component: Home
   }
 ]
 
