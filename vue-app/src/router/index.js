@@ -1,11 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import WatchPage from '@/views/WatchPage'
 
 Vue.use(VueRouter)
 
-
-//router sırayla çalışır, hiçbiriyle matchleşmeşse home'a gider.
 const routes = [
   {
     path: '/home',
@@ -16,7 +15,12 @@ const routes = [
     path: '*',
     name: 'Home',
     component: Home
-  }
+  },
+  {
+    path: "/watch",
+    name: 'Watch',
+    component: WatchPage
+  },
 ]
 
 const router = new VueRouter({

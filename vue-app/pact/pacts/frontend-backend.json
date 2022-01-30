@@ -21,9 +21,13 @@
         "body": [
           {
             "id": 1,
-            "name": "video",
-            "description": "video description",
-            "image": "https://fns.modanisa.com/r/pro2/2021/11/01/n-desenli-mevlana-elbise-tsd4414-turuncu-8067476-7.jpg%27"
+            "videoAddress": "https://www.youtube.com/watch?v=FXpIoQ_rT_c%22",
+            "coverImage": "https://raw.githubusercontent.com/modanisa/bootcamp-video-db/main/video-images/1-cover.webp%22",
+            "hoverImage": "https://raw.githubusercontent.com/modanisa/bootcamp-video-db/main/video-images/1-hover.webp%22",
+            "title": "Vue.js Course for Beginners [2021 Tutorial]",
+            "viewCount": 254,
+            "publishDateInMonth": 4,
+            "ownerImage": "https://yt3.ggpht.com/ytc/AKedOLTtJvQ1Vfew91vemeLaLdhjOwGx3tTBLlreK_QUyA=s68-c-k-c0x00ffffff-no-rj%22"
           }
         ],
         "matchingRules": {
@@ -36,13 +40,25 @@
           "$.body[*].id": {
             "match": "type"
           },
-          "$.body[*].name": {
+          "$.body[*].videoAddress": {
             "match": "type"
           },
-          "$.body[*].description": {
+          "$.body[*].coverImage": {
             "match": "type"
           },
-          "$.body[*].image": {
+          "$.body[*].hoverImage": {
+            "match": "type"
+          },
+          "$.body[*].title": {
+            "match": "type"
+          },
+          "$.body[*].viewCount": {
+            "match": "type"
+          },
+          "$.body[*].publishDateInMonth": {
+            "match": "type"
+          },
+          "$.body[*].ownerImage": {
             "match": "type"
           }
         }

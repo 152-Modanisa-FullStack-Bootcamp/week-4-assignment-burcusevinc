@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
+    "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "test:pact": "vue-cli-service test:unit pacts/"
@@ -11,6 +12,7 @@
   "dependencies": {
     "axios": "^0.25.0",
     "core-js": "^3.6.5",
+    "flush-promises": "^1.0.2",
     "jest-pact": "^0.9.1",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",

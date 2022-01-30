@@ -40,7 +40,7 @@ pactWith({
                     })
                 }
             })
-            const res = await api.getVideoList() //metod, body'nin içini döndürür.
+            const res = await api.getVideoList() //metod body nin içerisini döndürür.
             expect(res[0].id).toEqual(1) //0. verinin id değerinin 1 olmasını bekliyor.
         })
     })
