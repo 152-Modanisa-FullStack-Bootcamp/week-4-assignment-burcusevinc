@@ -1,12 +1,7 @@
-import { createLocalVue, shallowMount } from "@vue/test-utils"
+import { shallowMount, mount } from "@vue/test-utils"
 import Video from "@/components/Video";
-import VueRouter from "vue-router"
-import WatchPage from "@/views/WatchPage";
-
 
 function mountComponent() {
-
-
     return shallowMount(Video, {
         propsData: {
             videoProps: [{
@@ -54,7 +49,6 @@ describe('Video.vue', () => {
             "description": "Learn the fundamentals of Vue JS (v3) in this project-based crash course",
             "favorite": true
         }
-
         let routerPushMock = jest.fn()
 
         const wrapper = shallowMount(Video, {
@@ -71,7 +65,36 @@ describe('Video.vue', () => {
         await img.trigger('click')
 
         expect(goToWatchSpy).toBeCalled()
-        expect(routerPushMock).toHaveBeenCalledWith({"path": "watch", "query": {"id": 2}})
+        expect(routerPushMock).toHaveBeenCalledWith({"path": "watch", "query": {"id": videoProps.id}})
 
+    })
+
+    test('when user hover "Vue.js Explained in 100 Seconds" video,he/she should see video GIF', () => {
+        let props =  {
+            "id": 3,
+            "videoAddress": "https://www.youtube.com/watch?v=nhBVL41-_Cw&ab_channel=Fireship",
+            "coverImage": "https://raw.githubusercontent.com/modanisa/bootcamp-video-db/main/video-images/3-cover.webp",
+            "hoverImage": "https://raw.githubusercontent.com/modanisa/bootcamp-video-db/main/video-images/3-hover.webp",
+            "title": "Vue.js Explained in 100 Seconds",
+            "viewCount": 662,
+            "publishDateInMonth": 12,
+            "ownerImage": "https://yt3.ggpht.com/ytc/AKedOLTcIl6kKt3lEPJEySUf_hpHiKDKiFeo9eWPReLysQ=s68-c-k-c0x00ffffff-no-rj",
+            "ownerName": "Fireship",
+            "description": "What is Vue.js? Learn the basics of Vue and build your first reactive UI component in just 100"
+        }
+
+        const wrapper = mount(Video, {
+            propsData: {
+                videoProps:props
+            },
+            data(){
+                return{
+                    isHover:true
+                }
+            }
+        })
+
+        const hoverImage = wrapper.find("img").attributes().src
+        expect(hoverImage).toEqual(props.hoverImage)
     })
 })
